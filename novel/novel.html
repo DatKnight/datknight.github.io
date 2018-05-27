@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../CSS/style.css" title = 'normal'>
+    <link rel='alternate stylesheet' href='../CSS/light.css' title='light'>
+    <link rel="stylesheet" href="../CSS/novel.css">
+    <script src="../JS/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="../JS/updates.js" type="text/javascript"></script>
+    <title>Novel</title>
+  </head>
+  <body>
+
+    <div class="navbar">
+      <a href="../index.html">Home</a>
+      <a href="../work/work.html">Work</a>
+      <a href="">Novel Updates</a>
+    </div>
+
+    <div class="head">
+      <h3>Novel Update Tracker</h3>
+    </div>
+
+    <div class="intro">
+      <p>This is a little scraping project I made to keep track of all of the web serials
+        I am currently following. It simply requests the webpage for each listed novel
+        and parses it for any new chapters.</p>
+    </div>
+
+    <div class="button>"
+      <a id="update" href="" onclick="checkUpdates()">Refresh</a>
+    </div>
+
+    <div class = "novels">
+      <div class = "col">
+        <a class="title" href="https://royalroadl.com/fiction/5701/savage-divinity">Savage Divinity</a><br>
+        <p class="subtitle" ><a class = "subtitle" href = "" id="SD">Last Chapter: Checking...</a></p>
+        <p class="subtitle" id="SD/">Last Updated: Checking...</p>
+
+        <br>
+        <a class="title" href="http://royalroadl.com/fiction/8894/everybody-loves-large-chests">Everybody Loves Large Chests</a><br>
+        <p class="subtitle"><a class = "subtitle" href = "" id="ELLC">Last Chapter: Checking...</a></p>
+        <p class="subtitle" id="ELLC/">Last Updated: Checking...</p>
+
+        <br>
+        <a class="title" href="https://archiveofourown.org/works/11478249/chapters/25740126">Worth the Candle</a><br>
+        <p class="subtitle"><a class = "subtitle" href = "" id="WTC">Last Chapter: Checking...</a></p>
+        <p class="subtitle" id="WTC/">Last Updated: Checking...</p>
+      </div>
+
+      <div class = "col">
+        <a class="title" href="https://royalroadl.com/fiction/16545/brimstone-fantasy">Brimstone Fantasy</a><br>
+        <p class="subtitle"><a class = "subtitle" href = "" id="BF">Last Chapter: Checking...</a></p>
+        <p class="subtitle" id="BF/">Last Updated: Checking...</p>
+
+        <br>
+        <a class="title" href="https://royalroadl.com/fiction/15925/the-daily-grind">The Daily Grind</a><br>
+        <p class="subtitle"><a class = "subtitle" href = "" id="TDG">Last Chapter: Checking...</a></p>
+        <p class="subtitle" id="TDG/">Last Updated: Checking...</p>
+
+        <br>
+        <a class="title" href="https://royalroadl.com/fiction/11209/the-legend-of-randidly-ghosthound">The Legend of Randidly Ghosthound</a><br>
+        <p class="subtitle"><a class = "subtitle" href = "" id="RG">Last Chapter: Checking...</a></p>
+        <p class="subtitle" id="RG/">Last Updated: Checking...</p>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      <a>Light Theme</a>
+      <a>Dark Theme</a>
+    </div>
+
+  </body>
+</html>

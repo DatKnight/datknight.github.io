@@ -1,0 +1,25 @@
+/* Head */
+
+.head {
+  text-align: center;
+  padding-left: 35%;
+  padding-right: 35%;
+  padding-top: 10%;
+}
+
+.head h3 {
+  font-size: 22px;
+}
+
+/* Intro */
+
+.intro {
+  text-align: center;
+  padding-left: 35%;
+  padding-right: 35%;
+  padding-top: 5px;
+}
+
+.intro p {
+
+}

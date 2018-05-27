@@ -1,0 +1,51 @@
+/* Head */
+
+.head {
+  text-align: center;
+  padding-left: 30%;
+  padding-right: 30%;
+  padding-top: 5%;
+}
+
+.head h3 {
+  font-size: 22px;
+}
+
+/* Intro */
+
+.intro {
+  text-align: center;
+  padding-left: 30%;
+  padding-right: 30%;
+  padding-top: 0px;
+}
+
+/* Projects */
+
+.projects {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.projects a {
+  padding-top: 20px;
+  padding: 10px 10px;
+  color: #c0c0ce;
+  text-decoration: none;
+}
+
+.projects a:hover {
+    color: #ffffff;
+}
+
+.title {
+  padding-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 15px;
+  padding-right: 30%;
+  padding-left: 30%;
+}

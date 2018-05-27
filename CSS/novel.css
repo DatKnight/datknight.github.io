@@ -1,0 +1,70 @@
+/* Head */
+
+.head {
+  text-align: center;
+  padding-left: 30%;
+  padding-right: 30%;
+  padding-top: 5%;
+}
+
+.head h3 {
+  font-size: 22px;
+}
+
+/* Intro */
+
+.intro {
+  text-align: center;
+  padding-left: 30%;
+  padding-right: 30%;
+  padding-top: 0px;
+}
+
+/* Novels */
+
+.novels {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.col {
+  flex: 1 0 50%;
+  white-space: nowrap;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.novels a {
+  padding: 10px 10px;
+  color: #c0c0ce;
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+
+.novels a:hover {
+    color: #ffffff;
+}
+
+.title {
+  padding-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 15px;
+}
+
+#update {
+  font-size: 20px;
+  padding: 10px 10px;
+  color: #c0c0ce;
+  text-align: center;
+  text-decoration: none;
+}
+
+#update:hover {
+  color: #ffffff;
+}
