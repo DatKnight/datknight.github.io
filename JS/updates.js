@@ -9,7 +9,7 @@ Date.prototype.timeNow = function () {
 }
 
 function loadDataTZK(url, id){
-  var origin = 'https://allorigins.me/get?url=' +
+  let origin = 'https://allorigins.me/get?url=' +
   encodeURIComponent(url) +
   'callback=?';
   $.get(origin, function(response){
@@ -21,7 +21,8 @@ function loadDataTZK(url, id){
   });
 }
 
-function loadDataRR(url, id){
+function loadDataRROld(url, id){
+  console.log('loading ' + url + '.....');
   let array = null;
   let array2 = null;
   let num = null;
@@ -31,6 +32,11 @@ function loadDataRR(url, id){
   encodeURIComponent(url) +
   'callback=?';
   $.get(origin, function(response){
+    if(response != null){
+	//console.log('No response from ' + url);
+	console.log(response.contents);
+    }else{
+    
     array = response.contents.match(/[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{1,4}\<\/time> ago/g);
     array2 = response.contents.match(/\/chapter\/.+\/.+">/g);
     newUrl = url + array2[array2.length-1];
@@ -39,6 +45,35 @@ function loadDataRR(url, id){
     lastUpdate = array[num - 1].match(/[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{1,4}/)[0];
     updateChapterField(id,num,newUrl);
     updateDateField(id + '/',lastUpdate);
+    }
+  });
+}
+
+function loadDataRR(url, id){
+  console.log('loading ' + url + '.....');
+  let array = null;
+  let array2 = null;
+  let num = null;
+  let lastUpdate = null;
+  let latest = null;
+  let origin = 'https://allorigins.me/get?url=' +
+  encodeURIComponent(url) +
+  'callback=?';
+  $.get(origin, function(response){
+    if(response == null){
+	//console.log('No response from ' + url);
+	console.log(response.contents);
+    }else{
+    
+    array = response.contents.match(/(?<=\<time format=\"agoshort\" >).+(?=\<\/time>)/g);
+    num = array.length - 1;
+    lastUpdate = array[num] + 'ago';
+    array2 = response.contents.match(/\/chapter\/.+\/.+(?=">)/g);
+    newUrl = url + array2[array2.length-1];
+
+    updateChapterField(id,num,newUrl);
+    updateDateField(id + '/',lastUpdate);
+    }
   });
 }
 
@@ -83,6 +118,19 @@ function loadDataGeneric(url, id, regex){
   });
 }
 
+function loadDataTest(url){
+	let origin = 'https://allorigins.me/get?url=' +
+  	encodeURIComponent(url) +
+  	'callback=?';
+  	$.get(origin, function(response){
+		if(response != null){
+			console.log(response);	
+		} else{
+			console.log('returned null');
+		}
+	});
+}
+
 function updateChapterField(id,chapter,url){
   current = document.getElementById(id);
   current.innerHTML = 'Last Chapter: ' + chapter;
@@ -122,11 +170,11 @@ function getDateTime(){
 
 function checkUpdates(){
   checking();
-  loadDataRR('http://royalroadl.com/fiction/8894/everybody-loves-large-chests','ELLC');
-  loadDataRR('http://royalroadl.com/fiction/5701/savage-divinity', 'SD');
-  loadDataRR('https://royalroadl.com/fiction/15925/the-daily-grind', 'TDG');
-  loadDataRR('https://royalroadl.com/fiction/11209/the-legend-of-randidly-ghosthound', 'RG');
-  loadDataRR('https://royalroadl.com/fiction/16545/brimstone-fantasy','BF');
+  loadDataRR('http://royalroad.com/fiction/8894/everybody-loves-large-chests','ELLC');
+  loadDataRR('http://royalroad.com/fiction/5701/savage-divinity', 'SD');
+  loadDataRR('https://royalroad.com/fiction/15925/the-daily-grind', 'TDG');
+  loadDataRR('https://www.royalroad.com/fiction/11209/the-legend-of-randidly-ghosthound', 'RG');
+  loadDataRR('https://www.royalroad.com/fiction/16545/brimstone-fantasy','BF');
   loadDataAO3('http://archiveofourown.org/works/11478249/chapters/25740126','WTC');
 }
 
