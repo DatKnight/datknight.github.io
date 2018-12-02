@@ -1,4 +1,4 @@
-let allorigins = 'http://api.allorigins.ml/get?url=';
+let allorigins = 'https://api.allorigins.ml/get?url=';
 
 // For todays date;
 Date.prototype.today = function () {
