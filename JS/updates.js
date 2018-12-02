@@ -9,7 +9,7 @@ Date.prototype.timeNow = function () {
 }
 
 function loadDataTZK(url, id){
-  let origin = 'https://allorigins.me/get?url=' +
+  let origin = 'https://allorigins.ml/get?url=' +
   encodeURIComponent(url) +
   'callback=?';
   $.get(origin, function(response){
@@ -28,7 +28,7 @@ function loadDataRROld(url, id){
   let num = null;
   let lastUpdate = null;
   let latest = null;
-  let origin = 'https://allorigins.me/get?url=' +
+  let origin = 'https://allorigins.ml/get?url=' +
   encodeURIComponent(url) +
   'callback=?';
   $.get(origin, function(response){
@@ -56,7 +56,7 @@ function loadDataRR(url, id){
   let num = null;
   let lastUpdate = null;
   let latest = null;
-  let origin = 'https://allorigins.me/get?url=' +
+  let origin = 'https://allorigins.ml/get?url=' +
   encodeURIComponent(url) +
   'callback=?';
   $.get(origin, function(response){
@@ -78,7 +78,7 @@ function loadDataRR(url, id){
 }
 
 function loadDataAO3(url, id){
-  let origin = 'https://allorigins.me/get?url=' +
+  let origin = 'https://allorigins.ml/get?url=' +
   encodeURIComponent(url) +
   'callback=?';
   let array = null;
@@ -95,7 +95,7 @@ function loadDataAO3(url, id){
 }
 
 function loadDataFP(url, id){
-  var origin = 'https://allorigins.me/get?url=' +
+  var origin = 'https://allorigins.ml/get?url=' +
   encodeURIComponent(url) +
   'callback=?';
   $.get(origin, function(response){
@@ -108,7 +108,7 @@ function loadDataFP(url, id){
 }
 
 function loadDataGeneric(url, id, regex){
-  var origin = 'https://allorigins.me/get?url=' +
+  var origin = 'https://allorigins.ml/get?url=' +
   encodeURIComponent(url) +
   'callback=?';
   $.get(origin, function(response){
@@ -119,7 +119,7 @@ function loadDataGeneric(url, id, regex){
 }
 
 function loadDataTest(url){
-	let origin = 'https://allorigins.me/get?url=' +
+	let origin = 'https://allorigins.ml/get?url=' +
   	encodeURIComponent(url) +
   	'callback=?';
   	$.get(origin, function(response){
