@@ -10,6 +10,25 @@ Date.prototype.timeNow = function () {
      return ((this.getHours() < 10)?"0":"") + this.getHours() +":"+ ((this.getMinutes() < 10)?"0":"") + this.getMinutes() +":"+ ((this.getSeconds() < 10)?"0":"") + this.getSeconds();
 }
 
+//Get URLS from HTML page and return in a list alongside tags to indicate what loading filters to use
+function grabURLS(i){
+  let titles = document.getElementsByClassName("title");
+  let list = [];
+  let website = null;
+
+  console.log(titles[i].href);
+
+  /**
+  for(let i = 0; i < titles.length; i++){
+    website = titles[i].href.match();
+    switch(){
+
+    }
+  }
+  **/
+
+};
+
 function loadDataTZK(url, id){
   let origin = allorigins +
   encodeURIComponent(url) +
@@ -38,7 +57,7 @@ function loadDataRROld(url, id){
 	//console.log('No response from ' + url);
 	console.log(response.contents);
     }else{
-    
+
     array = response.contents.match(/[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{1,4}\<\/time> ago/g);
     array2 = response.contents.match(/\/chapter\/.+\/.+">/g);
     newUrl = url + array2[array2.length-1];
@@ -66,7 +85,7 @@ function loadDataRR(url, id){
 	//console.log('No response from ' + url);
 	console.log(response.contents);
     }else{
-    
+
     array = response.contents.match(/(?<=\<time format=\"agoshort\" >).+(?=\<\/time>)/g);
     num = array.length - 1;
     lastUpdate = array[num] + 'ago';
@@ -126,7 +145,7 @@ function loadDataTest(url){
   	'callback=?';
   	$.get(origin, function(response){
 		if(response != null){
-			console.log(response);	
+			console.log(response);
 		} else{
 			console.log('returned null');
 		}
@@ -172,12 +191,12 @@ function getDateTime(){
 
 function checkUpdates(){
   checking();
-  loadDataRR('http://royalroad.com/fiction/8894/everybody-loves-large-chests','ELLC');
-  loadDataRR('http://royalroad.com/fiction/5701/savage-divinity', 'SD');
-  loadDataRR('https://royalroad.com/fiction/15925/the-daily-grind', 'TDG');
-  loadDataRR('https://www.royalroad.com/fiction/11209/the-legend-of-randidly-ghosthound', 'RG');
-  loadDataRR('https://www.royalroad.com/fiction/16545/brimstone-fantasy','BF');
-  loadDataAO3('http://archiveofourown.org/works/11478249/chapters/25740126','WTC');
+  loadDataRR('http://royalroad.com/fiction/5701/savage-divinity', '1');
+  loadDataRR('http://royalroad.com/fiction/8894/everybody-loves-large-chests','2');
+  loadDataAO3('http://archiveofourown.org/works/11478249/chapters/25740126','3');
+  loadDataRR('https://www.royalroad.com/fiction/21410/super-minion','4');
+  loadDataRR('https://www.royalroad.com/fiction/22653/supervillainy-and-other-poor-career-choices', '5');
+  loadDataRR('https://www.royalroad.com/fiction/22019/undermind', '6');
 }
 
 window.onload = checkUpdates();
